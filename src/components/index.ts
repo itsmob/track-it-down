@@ -4,6 +4,7 @@ import { Button } from './Button';
 import { Card } from './Card';
 import { ExerciseDetails } from './ExerciseDetails';
 import { ExerciseItem } from './ExerciseItem';
+import { Modal } from './Modal';
 import { RoutineName } from './RoutineName';
 import { Section } from './Section';
 import { Separator } from './Separator';
@@ -15,6 +16,7 @@ export {
   Card,
   ExerciseDetails,
   ExerciseItem,
+  Modal,
   RoutineName,
   Section,
   Separator,
