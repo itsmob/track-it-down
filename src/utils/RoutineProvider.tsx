@@ -4,26 +4,15 @@ import {
   useContext,
   useReducer,
 } from 'react';
-import { Action, routineReducer } from './routineReducer';
-
-export type Routine = {
-  id?: string;
-  name: string;
-  exercises:
-    | [
-        {
-          name: string;
-          weight?: { amount: number; type: 'Lb' | 'Kg' };
-          restTime?: number;
-          repetitions?: number;
-        },
-      ]
-    | [];
-};
+import { Action, routineReducer, Routine, SECTION } from './routineReducer';
 
 const RoutineContext = createContext<Routine>({
   name: 'Rutina 1',
-  exercises: [],
+  exercises: {
+    [SECTION.warmup]: [],
+    [SECTION.main]: [],
+    [SECTION.cooldown]: [],
+  },
 });
 
 const RoutineDispatchContext = createContext<React.Dispatch<Action> | null>(
@@ -33,7 +22,11 @@ const RoutineDispatchContext = createContext<React.Dispatch<Action> | null>(
 export function RoutineProvider({ children }: PropsWithChildren) {
   const [routine, dispatch] = useReducer(routineReducer, {
     name: 'Rutina 1',
-    exercises: [],
+    exercises: {
+      [SECTION.warmup]: [],
+      [SECTION.main]: [],
+      [SECTION.cooldown]: [],
+    },
   });
 
   return (

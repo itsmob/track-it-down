@@ -33,12 +33,12 @@ export const RoutineName = () => {
       );
 
       dispatch({
-        type: 'routine-name-changed',
+        type: 'ROUTINE_NAME_CHANGED',
         payload: { routineName: 'Rutina 1' },
       });
     } else {
       dispatch({
-        type: 'routine-name-changed',
+        type: 'ROUTINE_NAME_CHANGED',
         payload: { routineName: trimmedName },
       });
     }
